@@ -8,7 +8,7 @@ pipeline {
         stage("Checkout code"){
             steps
             {
-                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/satya8127/week_9_Assignment.git']])
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/abhi330/jenkinssample.git']])
                 echo 'Check Out'
             }
         }
