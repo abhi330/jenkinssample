@@ -16,7 +16,7 @@ pipeline {
             steps {
                 sh 'mvn -f pom.xml clean install'
                 echo 'Cleaning..' }}
-        stages('docker push'){
+        stage('docker push'){
         steps{
         withCredentials([string(credentialsId: 'dockerid', variable: 'dockerhub')]) {
         // some block
