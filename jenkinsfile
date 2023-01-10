@@ -15,4 +15,16 @@ pipeline {
         stage('Clean') {
             steps {
                 sh 'mvn -f pom.xml clean install'
-                echo 'Cleaning..' }}}}
+                echo 'Cleaning..' }}
+        stages('docker push'){
+        steps{
+        withCredentials([string(credentialsId: 'dockerid', variable: 'dockerhub')]) {
+        // some block
+
+        sh 'docker build -t abhilashmedaboina/jenkinswithdocker .'
+        sh 'docker login -u abhilashmedaboina -p dockerhub'
+        sh 'docker push abhilashmedaboina/jenkinswithdocker'
+        } }
+}
+               
+               }}
