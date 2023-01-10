@@ -20,7 +20,7 @@ pipeline {
         steps{
         withCredentials([string(credentialsId: 'dockerid', variable: 'dockerhub')]) {
         // some block
-
+        sh 'docker version'
         sh 'docker build -t jenkinswithdocker .'
         sh 'docker login -u abhilashmedaboina -p Abhi@docker'
         sh 'docker push abhilashmedaboina/jenkinswithdocker'
