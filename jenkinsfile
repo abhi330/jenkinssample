@@ -21,8 +21,8 @@ pipeline {
         withCredentials([string(credentialsId: 'dockerid', variable: 'dockerhub')]) {
         // some block
 
-        sh 'docker build -t abhilashmedaboina/jenkinswithdocker .'
-        sh 'docker login -u abhilashmedaboina -p dockerhub'
+        sh 'docker build -t jenkinswithdocker .'
+        sh 'docker login -u abhilashmedaboina -p Abhi@docker'
         sh 'docker push abhilashmedaboina/jenkinswithdocker'
         } }
 }
